@@ -32,6 +32,10 @@
          (specification->package "dmenu")
          (specification->package "st")
          (specification->package "nss-certs")
+         (specification->package "gnome-disk-utility")
+         (specification->package "ntfs-3g")
+         (specification->package "udiskie")
+         (specification->package "docker-cli")
          (specification->package "stumpwm-with-slynk")
          (specification->package "sbcl-stumpwm-swm-gaps")
          (specification->package "emacs-stumpwm-mode")
@@ -48,7 +52,8 @@
          (set-xorg-configuration
           (xorg-configuration
            (keyboard-layout keyboard-layout)))
-         (service docker-service-type))
+         (service docker-service-type)
+         (udisks-service))
    %desktop-services))
  (bootloader
   (bootloader-configuration
