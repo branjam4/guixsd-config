@@ -55,7 +55,8 @@
           (xorg-configuration
            (keyboard-layout keyboard-layout)))
          (service xfce-desktop-service-type)
-         (service docker-service-type))
+         (service docker-service-type)
+         (service singularity-service-type))
    %desktop-services))
  (bootloader
   (bootloader-configuration
