@@ -27,23 +27,24 @@
                %base-user-accounts))
  (packages
   (append
-   (list (specification->package "i3-wm")
-         (specification->package "i3status")
-         (specification->package "dmenu")
-         (specification->package "st")
-         (specification->package "nss-certs")
-         (specification->package "gnome-disk-utility")
-         (specification->package "ntfs-3g")
-         (specification->package "docker-cli")
-         (specification->package "picom")
-         (specification->package "dunst")
-         (specification->package "stumpwm-with-slynk")
-         (specification->package "sbcl-stumpwm-swm-gaps")
-         (specification->package "emacs-stumpwm-mode")
-         (specification->package "sbcl-stumpwm-globalwindows")
-         (specification->package "sbcl-stumpwm-ttf-fonts")
-         (specification->package "sbcl-stumpwm-stumptray")
-         (specification->package "sbcl-stumpwm-net"))
+   (map specification->package
+        '("i3-wm"
+          "i3status"
+          "dmenu"
+          "st"
+          "nss-certs"
+          "gnome-disk-utility"
+          "ntfs-3g"
+          "docker-cli"
+          "picom"
+          "dunst"
+          "stumpwm-with-slynk"
+          "sbcl-stumpwm-swm-gaps"
+          "emacs-stumpwm-mode"
+          "sbcl-stumpwm-globalwindows"
+          "sbcl-stumpwm-ttf-fonts"
+          "sbcl-stumpwm-stumptray"
+          "sbcl-stumpwm-net"))
    %base-packages))
  (services
   (append
@@ -53,6 +54,7 @@
          (set-xorg-configuration
           (xorg-configuration
            (keyboard-layout keyboard-layout)))
+         (service xfce-desktop-service-type)
          (service docker-service-type))
    %desktop-services))
  (bootloader
