@@ -35,6 +35,8 @@
          (specification->package "gnome-disk-utility")
          (specification->package "ntfs-3g")
          (specification->package "docker-cli")
+         (specification->package "picom")
+         (specification->package "dunst")
          (specification->package "stumpwm-with-slynk")
          (specification->package "sbcl-stumpwm-swm-gaps")
          (specification->package "emacs-stumpwm-mode")
