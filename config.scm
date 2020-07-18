@@ -60,7 +60,7 @@
    %desktop-services))
  (bootloader
   (bootloader-configuration
-   (bootloader grub-bootloader)
+   (bootloader grub-efi-bootloader)
    (target "/dev/sda")
    (keyboard-layout keyboard-layout)))
  (swap-devices (list "/dev/sda1"))
