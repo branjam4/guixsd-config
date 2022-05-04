@@ -1,9 +1,8 @@
 FROM gitpod/workspace-full-vnc
 
 USER root
-WORKDIR /
 
-COPY /temp/emacs-vm.qcow2 /emacs-vm.qcow2
+COPY temp/emacs-vm.qcow2 /emacs-vm.qcow2
 
-COPY /temp/qemu-python.tar.gz /tmp/qemu-python.tar.gz
+COPY temp/qemu-python.tar.gz /tmp/qemu-python.tar.gz
 RUN tar -xzf /tmp/qemu-python.tar.gz && rm -f /tmp/qemu-python.tar.gz
