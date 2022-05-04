@@ -97,7 +97,7 @@ jobs:
       - name: Download pack (Relocatable Binary)
         uses: actions/download-artifact@v3.0.0
         with:
-          path: /temp
+          path: temp
 
       # Install the cosign tool except on PR
       # https://github.com/sigstore/cosign-installer
