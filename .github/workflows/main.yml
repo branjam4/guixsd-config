@@ -60,7 +60,7 @@ jobs:
         run: guix system image --image-type=qcow2 --root=emacs-vm.qcow2 vm.scm
       # Create a docker image
       - name: Pack (Docker)
-        run: guix pack --save-provenance --root=qemu-python.tar.gz -m $GITHUB_WORKSPACE/qemu-manifest.scm
+        run: guix pack --relocatable --save-provenance --symlink=/opt/gnu/bin=bin --root=qemu-python.tar.gz -m $GITHUB_WORKSPACE/qemu-manifest.scm
       # Upload all artifacts
       - name: Upload pack (Relocatable Binary)
         uses: actions/upload-artifact@v2
