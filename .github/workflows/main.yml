@@ -97,8 +97,14 @@ jobs:
       - name: Download pack (Relocatable Binary)
         uses: actions/download-artifact@v3.0.0
         with:
-          path: temp
-
+          name: emacs VM
+          path: /temp/emacs-vm.qcow2
+          
+      - name: Download pack (Docker)      
+        uses: actions/download-artifact@v3.0.0
+        with:
+          name: qemu Docker relocatable Binary
+          path: /temp/qemu-python.tar.gz
       # Install the cosign tool except on PR
       # https://github.com/sigstore/cosign-installer
       - name: Install cosign
@@ -125,6 +131,7 @@ jobs:
       - name: Build
         run: |
           docker build --no-cache . # will run buildx
+          ls -R
           
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
