@@ -107,7 +107,7 @@ jobs:
           path: temp/
           
       - name: Display structure of downloaded files
-      run: ls -R
+        run: ls -R
       # Install the cosign tool except on PR
       # https://github.com/sigstore/cosign-installer
       - name: Install cosign
