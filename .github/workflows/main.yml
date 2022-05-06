@@ -131,11 +131,6 @@ jobs:
         with:
           install: true
           
-      - name: Build
-        run: |
-          docker build --no-cache . # will run buildx
-          ls -R
-          
       # Extract metadata (tags, labels) for Docker
       # https://github.com/docker/metadata-action
       - name: Extract Docker metadata
