@@ -3,6 +3,6 @@
    "nss-certs"
    "looking-glass-client"
    "virt-manager"
-   "transient"
+   "python-transient"
    "git"
    "python"))
