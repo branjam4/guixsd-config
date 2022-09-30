@@ -13,7 +13,7 @@
                      xorg docker vpn kerberos sound shepherd
                      monitoring version-control authentication
                      databases audio nfs spice)
-(use-package-modules base)
+(use-package-modules base xorg)
 
 (define auto-update-resolution-crutch
   #~(job '(next-second)
