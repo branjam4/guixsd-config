@@ -62,7 +62,7 @@ jobs:
         run: test -z "$(guix --version 2>&1 >/dev/null)"
       # Create VM
       - name: System VM (full VM)
-        run: guix system image --image-type=qcow2 --root=emacs-vm.qcow2 vm.scm
+        run: guix system image --image-type=qcow2 --root=emacs-vm.qcow2 config.scm
       # Create a docker image
       - name: Pack (Docker)
         run: guix pack --relocatable --save-provenance --symlink=/opt/gnu/bin=bin --root=qemu-python.tar.gz -m $GITHUB_WORKSPACE/qemu-manifest.scm
