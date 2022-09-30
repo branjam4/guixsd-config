@@ -15,6 +15,14 @@
                      databases audio nfs spice)
 (use-package-modules base)
 
+(define auto-update-resolution-crutch
+  #~(job '(next-second)
+         (lambda ()
+           (setenv "DISPLAY" ":0.0")
+           (setenv "XAUTHORITY" "/home/emacsuser/.Xauthority")
+           (execl (string-append #$xrandr "/bin/xrandr") "xrandr" "-s" "0"))
+         #:user "guest"))
+
 (define updatedb-job
        ;; Run 'updatedb' at 3AM every day.  Here we write the
        ;; job's action as a Scheme procedure.
@@ -85,7 +93,7 @@
          (service nslcd-service-type (nslcd-configuration))
          ;; (service pagekite-service-type (pagekite-configuration))
          (simple-service 'my-cron-jobs mcron-service-type
-                         (list updatedb-job))
+                         (list auto-update-resolution-crutch updatedb-job))
          (service mpd-service-type (mpd-configuration))
          ;; (service tailon-service-type)
          (service zabbix-server-service-type (zabbix-server-configuration))
