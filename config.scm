@@ -64,6 +64,7 @@
           "dunst"
           "vlc"
           "xf86-video-qxl"
+          "xrandr"
           "openldap"
           "mit-krb5"
           ;; "nss-pam-ldapd"
